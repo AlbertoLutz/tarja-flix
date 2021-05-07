@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../../components/Button";
 import FormField from "../../../components/Formfield";
@@ -28,18 +28,32 @@ const CadastroCategoria = () => {
   }
 
   function handleChange(event) {
-    setValue(event.target.getAttribute("name"), event.target.value);
+    setValue(event.target.getAttribute("nome"), event.target.value);
   }
+
+  useEffect(() => {
+    if (window.location.href.includes("localhost")) {
+      const URL = "http://localhost:8080/categorias";
+      fetch(URL).then(async (respostaDoServer) => {
+        if (respostaDoServer.ok) {
+          const resposta = await respostaDoServer.json();
+          setCategorias(resposta);
+          return;
+        }
+        throw new Error("Não foi possível pegar os dados");
+      });
+    }
+  }, []);
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria: {values.nome}</h1>
+      <h1>Cadastro de Categoria: {values.titulo}</h1>
 
       <form onSubmit={handleSubmit}>
         <FormField
           label="Nome da Categoria"
-          name="nome"
-          value={values.nome}
+          name="titulo"
+          value={values.name}
           onChange={handleChange}
         />
 
@@ -63,9 +77,16 @@ const CadastroCategoria = () => {
         <Button>Cadastrar</Button>
       </form>
 
+      {categorias.length === 0 && (
+        <div>
+          {/* Cargando... */}
+          Loading...
+        </div>
+      )}
+
       <ul>
-        {categorias.map((categoria, indice) => {
-          return <li key={`${categoria}${indice}`}>{categoria.nome}</li>;
+        {categorias.map((categoria) => {
+          return <li key={`${categoria.titulo}`}>{categoria.titulo}</li>;
         })}
       </ul>
 
