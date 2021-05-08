@@ -167,7 +167,7 @@ const CadastroCategoria = () => {
 						/>
 
 						<FormField
-							label={`Color: ${values.cor}`}
+							label="Cor"
 							type="color"
 							name="cor"
 							value={values.cor}
