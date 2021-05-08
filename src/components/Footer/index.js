@@ -5,8 +5,6 @@ import { FooterBase } from "./styled";
 import Logo from "../../assets/img/logo.png";
 
 function Footer() {
-	const data = new Date();
-
 	return (
 		<FooterBase>
 			<Link to="/">
