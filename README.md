@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="src/assets/Img/Logo.png">
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Objetivo da aplicação**
 
-## Available Scripts
+> <p>Esse projeto foi desenvolvido durante a <em>Imersão React comandado pela empresa Alura Cursos Online</em>, onde o intuito era criar uma aplicação baseada na Netflix, porém levando em consideração nossos gostos pessoais para gerar nossas próprias playlist de conteúdos favoritas.</p>
 
-In the project directory, you can run:
+<p>Criei então, o <strong>RangoFlix</strong>. O intuito dessa playlist é instigar você á arte da cozinha, e botar a mão na massa para fazer o que você gosta de uma maneira fácil. Aqui você encontrar diversas receitas desde doces à receitas low carbs.</p>
 
-### `yarn start`
+## Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   **_[ReactJS](https://pt-br.reactjs.org/)_**
+-   **_[Reack Slick](https://react-slick.neostack.com/)_**
+-   **_[Styled Components](https://styled-components.com/)_**
+-   **_[Styled Icons](https://styled-icons.js.org/)_**
+-   **_[Eslint](https://eslint.org/)_**
+-   **_[Prettier](https://prettier.io/)_**
+-   **_[Json Server](https://github.com/typicode/json-server)_**
+-   **_[Concurrently](https://www.npmjs.com/package/concurrently)_**
+-   **_[Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable)_**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pendências de implematação novas features após termino da imersão
 
-### `yarn test`
+-   [x] Exclusão de categorias
+-   [x] Alteração de Categorias
+-   [ ] Refatoração do código
+-   [ ] Ajustes no layout (paleta de cores e organização dos elementos)
+-   [ ] Ajustar responsividade
+-   [ ] Criar menu lateral para o mobile
+-   [ ] Adicionar select de categorias no cadastro de vídeo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalação
 
-### `yarn build`
+```bash
+git clone git@github.com:ReneSena/rangoflix.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd rangoflix
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Executar projeto em desenvolvimento
 
-### `yarn eject`
+```bash
+yarn run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Gerar versão de produção
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+yarn build
+```

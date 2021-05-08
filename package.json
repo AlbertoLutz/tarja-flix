@@ -1,34 +1,33 @@
 {
-  "name": "tarja-flix",
+  "name": "rangoflix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "json-server": "^0.16.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.1",
+    "json-server": "^0.16.1",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-slick": "^0.28.1",
-    "styled-components": "^5.2.3",
-    "web-vitals": "^1.0.1"
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.27.1",
+    "styled-components": "^5.1.1",
+    "styled-icons": "^10.33.0",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "server": "node ./server.js",
     "dev": "concurrently \"react-scripts start\" \"yarn run server\"",
-    "start": "npm run server",
+    "start": "yarn run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -41,5 +40,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^5.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "prettier": "^2.2.1"
   }
 }

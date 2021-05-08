@@ -1,35 +1,55 @@
-import React from "react";
-import Menu from "../../components/Menu";
-import Carousel from "../../components/Carousel";
+import React, { useEffect, useState } from "react";
+import Template from "../../components/Template";
+import Loader from "../../components/Loader";
 import BannerMain from "../../components/BannerMain";
-import Footer from "../../components/Footer";
-import dadosIniciais from "../../data/dados_iniciais.json";
+import Carousel from "../../components/Carousel";
+import categoriasRepository from "../../repositories/categorias";
 
-function Home() {
-  return (
-    <main style={{ background: "#141414" }}>
-      <Menu />
+const Home = () => {
+	const [dadosIniciais, setDadosIniciais] = useState([]);
 
-      <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription="O que"
-      />
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[0]} />
+	useEffect(() => {
+		categoriasRepository
+			.getAllWithVideos()
+			.then((categoriasComVideos) => {
+				setDadosIniciais(categoriasComVideos);
+			})
+			.catch((error) =>
+				console.error("Não foi possível acessar o servidor. :(", error)
+			);
+	}, []);
 
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[1]} />
+	return (
+		<>
+			<Template>
+				{dadosIniciais.length === 0 && <Loader />}
 
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[2]} />
+				{dadosIniciais.map((categoria, indice) => {
+					if (indice === 0) {
+						return (
+							<div key={categoria.id}>
+								<BannerMain
+									videoTitle={
+										dadosIniciais[0].videos[0].titulo
+									}
+									url={dadosIniciais[0].videos[0].url}
+									videoDescription={
+										dadosIniciais[0].videos[0].description
+									}
+								/>
+								<Carousel
+									ignoreFirstVideo
+									category={dadosIniciais[0]}
+								/>
+							</div>
+						);
+					}
 
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[3]} />
-
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[4]} />
-
-      <Carousel ignoreFirstVideo category={dadosIniciais.categorias[5]} />
-
-      <Footer />
-    </main>
-  );
-}
+					return <Carousel key={categoria.id} category={categoria} />;
+				})}
+			</Template>
+		</>
+	);
+};
 
 export default Home;

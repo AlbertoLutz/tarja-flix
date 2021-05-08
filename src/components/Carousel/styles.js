@@ -1,55 +1,55 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Title = styled.h3`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 1;
-  margin-bottom: 16px;
-  display: inline-block;
-  padding: 20px;
-  background: red;
-  line-height: 1;
-  border-radius: 4px;
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 1;
+	margin: 0;
+	display: inline-block;
+	padding-bottom: 20px;
+	line-height: 1;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
 
-  @media (max-width: 800px) {
-    font-size: 18px;
-    padding: 10px;
-  }
-`;
+	&:before {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-color: ${(props) => props.background};
+		border-radius: 50px;
+		margin-right: 10px;
+	}
 
-export const ExtraLink = styled.a`
-  margin-left: 16px;
-  text-decoration: none;
-  transition: opacity .3s;
-  &:hover,
-  &:focus {
-    opacity: .5;
-  }
-  @media (max-width: 800px) {
-    display: block;
-    margin-bottom: 16px;
-    margin-left: 0;
-  }
+	@media (max-width: 800px) {
+		font-size: 24px;
+		padding: 0 0 10px 0;
+	}
 `;
 
 export const VideoCardList = styled.ul`
-  margin: 0;
-  padding-left: 0;
-  padding-bottom: 32px;
-  list-style: none;
-  display: flex;
-  overflow-x: auto;
-  flex-direction: row;
-  
-  li {
-    margin-right: 16px;
-  }
+	margin: 0;
+	padding-left: 0;
+	padding-bottom: 32px;
+	list-style: none;
+	display: flex;
+	overflow-x: auto;
+	flex-direction: row;
+
+	li {
+		margin-right: 16px;
+	}
 `;
 
 export const VideoCardGroupContainer = styled.section`
-  color: white;
-  min-height: 197px;
-  margin-left: 5%;
-  margin-bottom: 16px;
+	color: var(--white);
+	min-height: 197px;
+	padding: 20px 40px;
+	background-color: #171717;
+
+	@media (max-width: 800px) {
+		padding: 20px 10px;
+		min-height: 165px;
+	}
 `;
